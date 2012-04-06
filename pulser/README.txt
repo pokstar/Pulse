@@ -92,3 +92,4 @@ them.
     mvn dependency:sources
     mvn dependency:resolve -Dclassifier=javadoc
     mvn eclipse:eclipse
+    mvn eclipse:eclipse -DdownloadSources=true  -DdownloadJavadocs=true
