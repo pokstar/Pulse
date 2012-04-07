@@ -25,9 +25,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 public class DialogHelper extends Activity {
 
@@ -42,7 +39,6 @@ public class DialogHelper extends Activity {
 		dialog_return.show();
 	}
 
-
 	/**
 	 * 
 	 * @param context
@@ -55,26 +51,28 @@ public class DialogHelper extends Activity {
 	 * 
 	 * @param context
 	 */
-	/*public static void help(Context context) {
+	public static void help(Context context) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setTitle(R.string.prompt_help_title);
 		builder.setMessage(R.string.prompt_help_question);
 		builder.setIcon(R.drawable.icon);
-		builder.setPositiveButton(R.string.prompt_ok, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				// User clicked OK so do some stuff
-				System.out.println("OK clicked.");
-			}
-		});
-		builder.setNegativeButton(R.string.prompt_cancel, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				// User clicked Cancel so do some stuff
-				System.out.println("cancel clicked.");
-			}
-		});
+		builder.setPositiveButton(R.string.dialog_ok,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// User clicked OK so do some stuff
+						System.out.println("OK clicked.");
+					}
+				});
+		builder.setNegativeButton(R.string.dialog_cancel,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// User clicked Cancel so do some stuff
+						System.out.println("cancel clicked.");
+					}
+				});
 		builder.create();
 		builder.show();
-	}*/
+	}
 
 	/**
 	 * 
@@ -85,38 +83,45 @@ public class DialogHelper extends Activity {
 		builder.setTitle(R.string.prompt_quit_title);
 		builder.setMessage(R.string.prompt_quit_question);
 		builder.setIcon(R.drawable.icon);
-		builder.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				// User clicked OK so do some stuff
-				System.out.println("OK clicked.");
-			}
-		});
-		builder.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				// User clicked Cancel so do some stuff
-				System.out.println("cancel clicked.");
-			}
-		});
+		builder.setPositiveButton(R.string.dialog_ok,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// User clicked OK so do some stuff
+						System.out.println("OK clicked.");
+					}
+				});
+		builder.setNegativeButton(R.string.dialog_cancel,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// User clicked Cancel so do some stuff
+						System.out.println("cancel clicked.");
+					}
+				});
 		builder.create();
 		builder.show();
-		
 	}
 
 	/**
 	 * 
 	 */
 	public static void promptOnBackKey(Context context, String message, String title) {
-
-		AlertDialog ad = new AlertDialog.Builder(context).setMessage(message).setTitle(title).setCancelable(false).setPositiveButton(android.R.string.ok,
+		AlertDialog.Builder ad = new AlertDialog.Builder(context);
+		ad.setMessage(message);
+		ad.setTitle(title);
+		ad.setCancelable(false);
+		ad.setPositiveButton(android.R.string.ok,
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						// User selects OK, save changes to db
 					}
-				}).setNeutralButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				// User selects Cancel, discard all changes
-			}
-		}).show();
+				});
+		ad.setNeutralButton(android.R.string.cancel,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// User selects Cancel, discard all changes
+					}
+				});
+		ad.show();
 	}
 
 }

@@ -3,6 +3,13 @@
     <string name="app_name">Tick</string>
     <string name="app_desc">Tick mass notification client</string>
     
+     <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_delete">Delete</string>
+    <string name="dialog_clear">Clear</string>
+    
     <string name="menu_channel_add">Add channel</string>
     <string name="menu_channel_add_shortcut">a</string>
     <string name="menu_preferences">Preferences</string>
@@ -10,21 +17,16 @@
     <string name="menu_quit">Quit</string>
     <string name="menu_quit_shortcut">q</string>
     
-    <string name="monitor_url_entry">URL:</string>
-    <string name="monitor_port_entry">Port:</string>
-    <string name="monitor_user_entry">User:</string>
-    <string name="monitor_password_entry">Password:</string>
-    
-    <string name="dialog_ok">OK</string>
-    <string name="dialog_cancel">Cancel</string>
-    <string name="dialog_yes">Yes</string>
-    <string name="dialog_no">No</string>
-    <string name="dialog_delete">Delete</string>
-    <string name="dialog_clear">Clear</string>
+    <string name="preference_title">Preferences</string>
+    <string name="preference_about_title">About</string>    
     
     <string name="prompt_help_question">Do you want to watch the help video on YouTube?</string>
     <string name="prompt_help_title">Help</string>
     <string name="prompt_quit_question">Do you want to quit?</string>
     <string name="prompt_quit_title">Quit</string>
     
+	<string name="server_url_entry">URL:</string>
+    <string name="server_port_entry">Port:</string>
+    <string name="server_user_entry">User:</string>
+    <string name="server_password_entry">Password:</string>
 </resources>

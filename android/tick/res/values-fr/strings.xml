@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tick</string>
+    <string name="app_desc">Tick, client de notification massive</string>
+    
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_yes">Oui</string>
+    <string name="dialog_no">Non</string>
+    <string name="dialog_delete">Effacer</string>
+    <string name="dialog_clear">Vider</string>
+    
+    <string name="menu_channel_add">Ajouter d\'un canal</string>
+    <string name="menu_channel_add_shortcut">a</string>
+    <string name="menu_preferences">Préférences</string>
+    <string name="menu_preferences_shortcut">p</string>
+    <string name="menu_quit">Quitter</string>
+    <string name="menu_quit_shortcut">q</string>
+    
+    <string name="prompt_help_question">Voulez-vous voir le vidéo d\'aide sur YouTube?</string>
+    <string name="prompt_help_title">Aide</string>
+    <string name="prompt_quit_question">Voulez-vous quitter</string>
+    <string name="prompt_quit_title">Quitter</string>
+    
+    <string name="server_url_entry">URL:</string>
+    <string name="server_port_entry">Port:</string>
+    <string name="server_user_entry">Utilisateur:</string>
+    <string name="server_password_entry">Mot de passe:</string>
+</resources>

@@ -8,3 +8,6 @@ target
 MANIFEST.MF
 .idea
 *.iml
+
+.android/tick/bin
+.android/tick/target
