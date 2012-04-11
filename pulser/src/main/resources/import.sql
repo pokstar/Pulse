@@ -1,2 +1,3 @@
--- You can use this file to load seed data into the database using SQL statements
-insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212') 
+INSERT INTO `Channel` (`id`,`name`) VALUES (1,'ChannelA'),(2,'ChannelB');
+INSERT INTO `User` (`id`,`email`,`name`,`msisdn`,`access_token`) VALUES (1,'dimitri@pulse.com','Dimitri','5141111111','tok1'),(2,'francis@pulse.com','Francis','5142222222','tok2'),(3,'jake@pulse.com','Jake','5143333333','tok3'),(4,'lpl@pulse.com','LPL','5144444444','tok4'),(5,'stan@pulse.com','Stan','5145555555','tok5');
+INSERT INTO `Userchannel` (`id`,`user_id`,`channel_id`) VALUES (1,1,1),(2,1,2),(3,2,1),(4,2,2),(5,3,1),(6,3,2),(7,4,1),(8,4,2),(9,5,1),(10,5,2);
