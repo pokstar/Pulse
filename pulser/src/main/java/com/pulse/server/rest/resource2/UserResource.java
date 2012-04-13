@@ -1,4 +1,4 @@
-package com.pulse.server.rest.Resource;
+package com.pulse.server.rest.resource;
 
 import java.util.List;
 import java.util.logging.Logger;
