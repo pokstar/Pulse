@@ -1,6 +1,7 @@
-package com.pulse.server.rest;
+package com.pulse.server.rest.Resource;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -12,9 +13,12 @@ import javax.ws.rs.Produces;
 
 import com.pulse.server.model.User;
 
-@Path("/user")
+@Path("/pulse")
 @RequestScoped
-public class UserResource {
+public class PulseResource {
+    @Inject
+    private Logger log;
+
     @Inject
     private EntityManager em;
 
@@ -29,7 +33,7 @@ public class UserResource {
     @GET
     @Path("/{id:[0-9][0-9]*}")
     @Produces("application/json")
-    public User lookupUserById(@PathParam("id") long id) {
+    public User lookupUserById(@PathParam("id") int id) {
         return em.find(User.class, id);
     }
 }

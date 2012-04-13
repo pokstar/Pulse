@@ -16,35 +16,35 @@ public class Userchannel implements Serializable {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     @NotNull
-    private Long user_id;
+    private Integer user_id;
 
     @NotNull
-    private Long channel_id;
+    private Integer channel_id;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getUser_id() {
+    public Integer getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(Long user_id) {
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
 
-    public Long getChannel_id() {
+    public Integer getChannel_id() {
         return channel_id;
     }
 
-    public void setChannel_id(Long channel_id) {
+    public void setChannel_id(Integer channel_id) {
         this.channel_id = channel_id;
     }
 }
