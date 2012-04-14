@@ -1,4 +1,4 @@
-package com.pulse.server.util;
+package com.pulser.server.util;
 
 import java.util.logging.Logger;
 

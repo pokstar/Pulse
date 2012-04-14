@@ -1,4 +1,4 @@
-package com.pulse.server.rest.resource;
+package com.pulser.server.rest.resource;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -17,7 +17,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.google.gson.Gson;
-import com.pulse.server.model.User;
+import com.pulser.server.model.User;
 
 @Path("/user")
 @RequestScoped
@@ -34,7 +34,7 @@ public class UserResource {
     public List<User> getAll() {
         log.info("::getAll: retrieving all users");
         @SuppressWarnings("unchecked")
-        List<User> results = em.createQuery("select u from " + User.class.getName() + " u").getResultList();//TODO Figure out why table name must be case sensitive
+        List<User> results = em.createQuery("select u from " + User.class.getName() + " u").getResultList();
         log.info("::getAll: found " + results.size() + " users");
         return results;
     }

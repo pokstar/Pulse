@@ -1,4 +1,4 @@
-package com.pulse.server.model;
+package com.pulser.server.model;
 
 import java.io.Serializable;
 
