@@ -61,20 +61,9 @@ public class UserResource {
         User userTmp = null;
         try {
             userTmp = new Gson().fromJson(json, User.class);
-//            userTmp.setAccess_token("tok1");
-//            userTmp.setEmail("email@email.com");
-//            userTmp.setId(0);
-//            userTmp.setMsisdn("514123456789");
-//            userTmp.setName("Stan");
-            log.info("11111111111111111111 id=" + userTmp.getId());
-            log.info("11111111111111111111 name=" + userTmp.getName());
-            log.info("11111111111111111111 email=" + userTmp.getEmail());
-            log.info("11111111111111111111 msisdn=" + userTmp.getMsisdn());
-            log.info("11111111111111111111 access_token=" + userTmp.getAccess_token());
             em.persist(userTmp);
         } catch(Exception e) {
-            log.info("11111111111 error");
-            e.printStackTrace();
+            log.info("::create error: problem creating user=" + userTmp);
         }
         return userTmp;
     }

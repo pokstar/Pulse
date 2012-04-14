@@ -24,8 +24,8 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id = 0;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @NotNull
     @Size(min = 1, max = 50)
@@ -42,8 +42,6 @@ public class User implements Serializable {
     @Digits(fraction = 0, integer = 12)
     private String msisdn;
 
-    @NotNull
-    @NotEmpty
     private String access_token;
 
     public Integer getId() {
@@ -84,5 +82,9 @@ public class User implements Serializable {
 
     public void setAccess_token(String access_token) {
         this.access_token = access_token;
+    }
+
+    public String toString() {
+        return "id:" + id + ",name:" + name + ",email" + email + ",msisdn:" + msisdn + ",access_token:" + access_token;
     }
 }
