@@ -28,6 +28,6 @@ CREATE TABLE `userchannel` (
   CONSTRAINT `userchannel_ibfk_2` FOREIGN KEY (`channel_id`) REFERENCES `channel` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `channel` (`id`,`name`) VALUES (1,'ChannelA'),(2,'ChannelB');
-INSERT INTO `user` (`id`,`email`,`name`,`msisdn`,`access_token`) VALUES (1,'dimitri@pulse.com','Dimitri','5141111111','tok1'),(2,'francis@pulse.com','Francis','5142222222','tok2'),(3,'jake@pulse.com','Jake','5143333333','tok3'),(4,'lpl@pulse.com','LPL','5144444444','tok4'),(5,'stan@pulse.com','Stan','5145555555','tok5');
-INSERT INTO `userchannel` (`id`,`user_id`,`channel_id`) VALUES (1,1,1),(2,1,2),(3,2,1),(4,2,2),(5,3,1),(6,3,2),(7,4,1),(8,4,2),(9,5,1),(10,5,2);
+INSERT INTO `channel` (`id`,`name`) VALUES (1,'ChannelAll'),(2,'ChannelDimitri'),(3,'ChannelFrancis'),(4,'ChannelJake'),(5,'ChannelLPL'),(6,'ChannelStan');
+INSERT INTO `user` (`id`,`email`,`name`,`msisdn`,`access_token`) VALUES (1,'dimitri@pulse.com','Dimitri','5141111111','tok1'),(2,'francis@pulse.com','Francis','5142222222','tok2'),(3,'jake@pulse.com','Jake','5143333333','tok3'),(4,'lpl@pulse.com','LPL','5144444444','tok4'),(5,'stan@pulse.com','Stan','5145555555','tok5'),(6,'common_test@pulse.com','Test User','5146666666','tok6');
+INSERT INTO `userchannel` (`id`,`user_id`,`channel_id`) VALUES (1,1,1),(2,2,1),(3,3,1),(4,4,1),(5,5,1),(6,1,2),(7,2,3),(8,3,4),(9,4,5),(10,5,6),(11,6,1);

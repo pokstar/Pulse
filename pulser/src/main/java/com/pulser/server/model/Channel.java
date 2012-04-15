@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -13,18 +13,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-@Table(name = "channel")
 public class Channel implements Serializable {
-    /** Default value included to remove warning. Remove or modify at will. **/
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotNull
     @Size(min = 1, max = 50)
-    @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
+    @Pattern(regexp = "[A-Za-z0-9 ]*", message = "must contain only letters, numbers and spaces")
     private String name;
 
     public Integer getId() {
@@ -41,5 +39,9 @@ public class Channel implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String toString() {
+        return "id:" + id + ",name:" + name;
     }
 }

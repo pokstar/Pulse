@@ -1,20 +1,22 @@
 package com.pulser.server.rest.resource;
 
-import java.util.List;
 import java.util.logging.Logger;
 
+import javax.ejb.Stateful;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.ws.rs.GET;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.pulser.server.model.User;
+import com.google.gson.Gson;
+import com.pulser.server.model.Channel;
 
 @Path("/pulse")
 @RequestScoped
+@Stateful
 public class PulseResource {
     @Inject
     private Logger log;
@@ -22,18 +24,18 @@ public class PulseResource {
     @Inject
     private EntityManager em;
 
-    @GET
+    @POST
+    @Consumes("application/json")
     @Produces("application/json")
-    public List<User> listAllUsers() {
-        @SuppressWarnings("unchecked")
-        final List<User> results = em.createQuery("select u from User u order by name").getResultList();//TODO Figure out why table name must be case sensitive
-        return results;
+    public String sendPulse(String json) {
+        log.info("::sendPulse: received params=" + json);
+        Channel channel = new Gson().fromJson(json, Channel.class);
+        channel = em.find(Channel.class, channel.getId());
+        log.info("::sendPulse: sending pulse to channelId=" + channel.getId());
+
+        //TODO do something
+
+        return "{status:200}";
     }
 
-    @GET
-    @Path("/{id:[0-9][0-9]*}")
-    @Produces("application/json")
-    public User lookupUserById(@PathParam("id") int id) {
-        return em.find(User.class, id);
-    }
 }

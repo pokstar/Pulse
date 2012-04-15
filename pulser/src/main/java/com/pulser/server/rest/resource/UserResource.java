@@ -7,8 +7,6 @@ import javax.ejb.Stateful;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -26,10 +24,24 @@ public class UserResource {
     @Inject
     private Logger log;
 
-    @PersistenceContext(type = PersistenceContextType.EXTENDED)
+    @Inject
     private EntityManager em;
 
     @GET
+    @Produces("application/json")
+    public User get() {
+        log.info("::get: retrieving self user");
+        User user = null;
+        try {
+            user = em.find(User.class, 6);//TODO Hardcoded for testing purpose!!
+        } catch(Exception e) {
+            log.warning("::get error: problem retrieving self user");
+        }
+        return user;
+    }
+
+    @GET
+    @Path("/all")
     @Produces("application/json")
     public List<User> getAll() {
         log.info("::getAll: retrieving all users");
@@ -42,22 +54,22 @@ public class UserResource {
     @GET
     @Path("/{id:[0-9][0-9]*}")
     @Produces("application/json")
-    public User get(@PathParam("id") int id) {
-        log.info("::get: retrieving userId=" + id);
+    public User getById(@PathParam("id") int id) {
+        log.info("::getById: retrieving userId=" + id);
         User user = null;
         try {
             user = em.find(User.class, id);
         } catch(Exception e) {
-            log.warning("::get error: problem retrieving userId=" + id);
+            log.warning("::getById error: problem retrieving userId=" + id);
         }
         return user;
     }
 
     @POST
-    @Path("/register")
     @Consumes("application/json")
     @Produces("application/json")
     public User create(String json) {
+        log.info("::create: creating user with params=" + json);
         User userTmp = null;
         try {
             userTmp = new Gson().fromJson(json, User.class);
