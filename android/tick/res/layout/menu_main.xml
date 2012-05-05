@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_channel_add"
+        android:alphabeticShortcut="@string/menu_channel_add_shortcut"
+        android:icon="@android:drawable/ic_menu_add"
+        android:orderInCategory="1"
+        android:state_enabled="true"
+        android:title="@string/menu_main_channel_add"/>
+
+    <item
+        android:id="@+id/menu_preferences"
+        android:alphabeticShortcut="@string/menu_main_preferences_shortcut"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:orderInCategory="2"
+        android:state_enabled="true"
+        android:title="@string/menu_main_preferences"/>
+
+    <item
+        android:id="@+id/menu_quit"
+        android:alphabeticShortcut="@string/menu_main_quit_shortcut"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:orderInCategory="3"
+        android:state_enabled="true"
+        android:title="@string/menu_main_quit"/>
+
+</menu>

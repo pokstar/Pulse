@@ -3,7 +3,7 @@ package me.tick.android.client;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-public class TickPreferencesXML extends PreferenceActivity {
+public class TickPreferencesActivity extends PreferenceActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

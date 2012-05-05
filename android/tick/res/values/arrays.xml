@@ -11,5 +11,10 @@
         <item>vibrate</item>
         <item>silent</item>
     </string-array>
+    <string-array name="harcoded_channels">
+        <item>sound</item>
+        <item>vibrate</item>
+        <item>silent</item>
+    </string-array>
 
 </resources>
