@@ -19,7 +19,8 @@
                 <category android:name = "android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name = ".TickPreferencesActivity" android:label = "Prefs"/>
+        <activity android:name = ".TickPreferencesActivity" />
+        <activity android:name = ".DialogHelper" />
         <!-- Track Market installs -->
         <!-- <receiver android:name="com.admob.android.ads.analytics.InstallReceiver" android:exported="true" >
             <intent-filter>

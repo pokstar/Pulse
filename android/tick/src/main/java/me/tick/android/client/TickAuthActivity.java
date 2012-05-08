@@ -1,11 +1,13 @@
 package me.tick.android.client;
 
+import me.tick.android.client.util.DialogHelper;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -32,8 +34,7 @@ public class TickAuthActivity extends Activity {
 		Button btnLogin = (Button) findViewById(R.id.LoginButton);
 		btnLogin.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(),
-						TickActivity.class);
+				Intent i = new Intent(getApplicationContext(), TickActivity.class);
 				i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(i);
 				//finish();
@@ -43,10 +44,10 @@ public class TickAuthActivity extends Activity {
 		Button btnRegister = (Button) findViewById(R.id.RegisterButton);
 		btnRegister.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(),
-						TickActivity.class);
-				i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(i);
+				DialogHelper.notSupportedYet(TickAuthActivity.this);
+				//Intent i = new Intent(getApplicationContext(), TickActivity.class);
+				//i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				//startActivity(i);
 				//finish();
 			}
 		});
@@ -60,5 +61,19 @@ public class TickAuthActivity extends Activity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.layout.menu_auth, menu);
 		return (super.onCreateOptionsMenu(menu));
+	}
+	
+	/**
+     * 
+     */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menu_auth_about:
+			DialogHelper.notSupportedYet(this);
+			return true;
+		}
+
+		return false;
 	}
 }

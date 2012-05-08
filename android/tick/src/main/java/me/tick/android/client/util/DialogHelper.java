@@ -25,6 +25,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Vibrator;
+import android.widget.Toast;
 
 public class DialogHelper extends Activity {
 
@@ -121,7 +123,20 @@ public class DialogHelper extends Activity {
 						// User selects Cancel, discard all changes
 					}
 				});
-		ad.show();
+		AlertDialog alert = ad.create();
+		alert.show();
+	}
+	
+	/**
+	 * 
+	 * @param context
+	 */
+	public static void notSupportedYet(Context context) {
+		Toast.makeText(context, "Not supported yet", Toast.LENGTH_SHORT).show();
+		long[] pattern = { 0, 100, 100, 100, 100, 100 };
+		Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+		v.vibrate(pattern, -1);
+
 	}
 
 }

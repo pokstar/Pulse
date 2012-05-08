@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/menu_channel_add"
-        android:alphabeticShortcut="@string/menu_channel_add_shortcut"
+        android:alphabeticShortcut="@string/menu_main_channel_add_shortcut"
         android:icon="@android:drawable/ic_menu_add"
         android:orderInCategory="1"
         android:state_enabled="true"

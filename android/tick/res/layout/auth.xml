@@ -38,7 +38,6 @@
             android:id="@+id/RememberLoginBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:text="Remember login"
             android:textColor="#888888"
             android:textSize="16sp" />
@@ -47,7 +46,6 @@
             android:id="@+id/AutoLoginBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:checked="false"
             android:state_enabled="false"
             android:text=" Automatically Login"
