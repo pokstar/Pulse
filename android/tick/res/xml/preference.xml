@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="livewallpaper_settings"
+    android:title="Preferences 1" >
+
+    <PreferenceCategory android:title="Notification settings" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="vibrate"
+            android:summary="Vibrate on incomming notifications"
+            android:title="Vibrate" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="applicationUpdates"
+            android:summary="Flash LED on incomming notifications"
+            android:title="Flash LED" />
+
+        <RingtonePreference
+            android:name="Ringtone Preference"
+            android:key="preference_ringtone"
+            android:summary="Set your notification ringtone"
+            android:title="Notification ringtones" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Miscellaneous" >
+        <PreferenceScreen android:title="Advance Preference" >
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="applicationUpdates"
+                android:summary="This option if selected will allow the application to check for latest versions."
+                android:title="Application Updates" />
+
+            <PreferenceCategory android:title="System preferences" >
+                <EditTextPreference
+                    android:defaultValue="tick.me"
+                    android:key=""
+                    android:summary="Set your server URL"
+                    android:title="URL" />
+                <EditTextPreference
+                    android:defaultValue="8500"
+                    android:key=""
+                    android:summary="Set your server port"
+                    android:title="Port" />
+                <EditTextPreference
+                    android:defaultValue=""
+                    android:key=""
+                    android:summary="Set username"
+                    android:title="Username" />
+                <EditTextPreference
+                    android:defaultValue="123456"
+                    android:inputType="textPassword"
+                    android:key=""
+                    android:summary="Set password"
+                    android:title="Password" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Beurk 1" >
+        <PreferenceScreen
+            android:enabled="false"
+            android:key="preference_version"
+            android:summary="v0.0.1"
+            android:title="Version" >
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>
